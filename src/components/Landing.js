@@ -5,6 +5,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import marsGif from "../assets/marsgif.gif";
 
@@ -17,6 +18,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${marsGif})`,
     backgroundSize: "cover",
     height: "100vh",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+      overflow: "hidden",
+    },
+  },
+  heroText: {
+    color: "#fff",
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.5em",
+    },
   },
   button: {
     fontFamily: "Montserrat",
@@ -32,9 +44,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Landing = () => {
+const Landing = (props) => {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
   let heroText = useRef(null);
   let enterButton = useRef(null);
   let tl = new TimelineLite();
@@ -65,7 +80,7 @@ const Landing = () => {
       <Typography
         ref={(el) => (heroText = el)}
         variant="h1"
-        style={{ color: "#fff" }}
+        className={classes.heroText}
       ></Typography>
       <Button
         ref={(el) => (enterButton = el)}
