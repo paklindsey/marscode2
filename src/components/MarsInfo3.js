@@ -11,13 +11,13 @@ import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
 const dummyData = [
-  { sol: "SOL 30001", date: "JAN.14.21", high: "9F", low: "9F" },
-  { sol: "SOL 30002", date: "JAN.15.21", high: "9F", low: "9F" },
-  { sol: "SOL 30003", date: "JAN.16.21", high: "9F", low: "9F" },
-  { sol: "SOL 30004", date: "JAN.17.21", high: "9F", low: "9F" },
-  { sol: "SOL 30005", date: "JAN.18.21", high: "9F", low: "9F" },
-  { sol: "SOL 30006", date: "JAN.19.21", high: "9F", low: "9F" },
-  { sol: "SOL 30007", date: "JAN.20.21", high: "9F", low: "9F" },
+  { sol: "SOL 3001", date: "JAN.14.21", high: "9F", low: "9F" },
+  { sol: "SOL 3002", date: "JAN.15.21", high: "9F", low: "9F" },
+  { sol: "SOL 3003", date: "JAN.16.21", high: "9F", low: "9F" },
+  { sol: "SOL 3004", date: "JAN.17.21", high: "9F", low: "9F" },
+  { sol: "SOL 3005", date: "JAN.18.21", high: "9F", low: "9F" },
+  { sol: "SOL 3006", date: "JAN.19.21", high: "9F", low: "9F" },
+  { sol: "SOL 3007", date: "JAN.20.21", high: "9F", low: "9F" },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +52,7 @@ const MarsInfo3 = () => {
   let bgImg = useRef(null);
   let textP1 = useRef(null);
   let textP2 = useRef(null);
+  let textP3 = useRef(null);
   let tl = new TimelineLite();
 
   useEffect(() => {
@@ -65,14 +66,14 @@ const MarsInfo3 = () => {
     tl.to(textP1, {
       delay: 1,
       duration: 4,
-      text: "WHERE CURIOSITY LANDED ON APRIL AUGUST 6TH, 2012",
+      text: "WHERE CURIOSITY LANDED ON AUGUST 6TH, 2012 AT 05:17 UTC",
       //  ease: Power3.easeInOut,
     });
     tl.to(textP2, {
       //  delay: 1,
       duration: 4,
       text:
-        " CURIOSITY WAS BUILT TO ROVE FOR 90 DAYS. THOUGH, IT IS STILL IN OPERATION TODAY",
+        "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION, SHE IS STILL IN OPERATION TODAY",
       //  ease: Power3.easeInOut,
     });
   });
