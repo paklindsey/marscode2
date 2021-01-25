@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
-import curiosty from "../assets/curiostyrover.png";
+import lanscape from "../assets/original.jpg";
+
+import { gsap, TimelineLite, Power3 } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+gsap.registerPlugin(TextPlugin);
 
 const dummyData = [
   { sol: "SOL 30001", date: "JAN.14.21", high: "9F", low: "9F" },
@@ -18,11 +22,13 @@ const dummyData = [
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundImage: `url(${curiosty})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-reapeat",
-    height: "100vh",
+    //     backgroundImage: `url(${curiosty})`,
+    //     backgroundPosition: "center",
+    //     backgroundSize: "cover",
+    //     backgroundRepeat: "no-reapeat",
+    //     height: "100vh",
+    position: "absolute",
+    zIndex: "2",
   },
   headerText: {
     marginTop: ".5em",
@@ -43,6 +49,33 @@ const useStyles = makeStyles((theme) => ({
 const MarsInfo3 = () => {
   const classes = useStyles();
   const theme = useTheme();
+  let bgImg = useRef(null);
+  let textP1 = useRef(null);
+  let textP2 = useRef(null);
+  let tl = new TimelineLite();
+
+  useEffect(() => {
+    gsap.to(bgImg, {
+      duration: 7,
+      scale: 1.5,
+      ease: Power3.easeInOut,
+      yoyo: true,
+      repeat: -1,
+    });
+    tl.to(textP1, {
+      delay: 1,
+      duration: 4,
+      text: "WHERE CURIOSITY LANDED ON APRIL AUGUST 6TH, 2012",
+      //  ease: Power3.easeInOut,
+    });
+    tl.to(textP2, {
+      //  delay: 1,
+      duration: 4,
+      text:
+        " CURIOSITY WAS BUILT TO ROVE FOR 90 DAYS. THOUGH, IT IS STILL IN OPERATION TODAY",
+      //  ease: Power3.easeInOut,
+    });
+  });
 
   return (
     <Grid
@@ -54,59 +87,44 @@ const MarsInfo3 = () => {
         item
         container
         direction="column"
-        style={{ marginTop: "20em", marginLeft: "5em" }}
+        style={{ marginTop: "20em", marginLeft: "10em" }}
       >
         <Typography style={{ color: "#fff" }}>
           A MARS SOL IS 24 HOURS, 39 MINUTES LONG
         </Typography>
         <Typography variant="h1" className={classes.headerText}>
-          THE LATEST WEATHER AT GALE CENTER
+          YOU ARE ON THE GALE CRATER
         </Typography>
+        <Typography
+          ref={(el) => (textP1 = el)}
+          variant="body1"
+          className={classes.headerText}
+          style={{ fontSize: ".8em", marginTop: "3em" }}
+        ></Typography>
+        <Typography
+          ref={(el) => (textP2 = el)}
+          variant="body1"
+          className={classes.headerText}
+          style={{ fontSize: ".8em", marginTop: "3em" }}
+        ></Typography>
       </Grid>
       <Grid
         container
-        style={{ width: "60em", height: "28em", marginTop: "18em" }}
+        style={{
+          width: "100%",
+          height: "auto",
+          marginTop: "0em",
+          position: "absolute",
+          overflow: "hidden",
+          zIndex: "-1",
+        }}
       >
-        {dummyData.map((day) => (
-          <Grid
-            key="day.id"
-            item
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-            className={classes.infoBox}
-          >
-            <Typography
-              variant="body1"
-              style={{
-                color: "#fff",
-                alignText: "center",
-                marginBottom: ".3em",
-              }}
-            >
-              {day.sol}
-            </Typography>
-            <Typography
-              variant="body1"
-              style={{ color: "#fff", marginBottom: ".5em" }}
-            >
-              {day.date}
-            </Typography>
-            <Typography
-              variant="body2"
-              style={{ color: "#fff", marginBottom: ".3em" }}
-            >
-              High : {day.high}
-            </Typography>
-            <Typography
-              variant="body2"
-              style={{ color: "#fff", marginBottom: ".3em" }}
-            >
-              Low : {day.low}
-            </Typography>
-          </Grid>
-        ))}
+        <img
+          ref={(el) => (bgImg = el)}
+          src={lanscape}
+          alt="mars dirt"
+          style={{ width: "100%", height: "100vh" }}
+        />
       </Grid>
     </Grid>
   );

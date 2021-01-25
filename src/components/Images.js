@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     //     backgroundSize: "cover",
     //     backgroundRepeat: "no-reapeat",
     height: "100vh",
+    marginTop: "-2em",
     //     marginTop: ".5em",
   },
   textField: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: "Montserrat",
     letterSpacing: 2,
+  },
+  cameraText: {
+    width: "50%",
   },
 }));
 
@@ -56,7 +60,7 @@ const Images = () => {
         if (count > res.data.photos.length - 1) {
           setCount(0);
         } else {
-          setImage(res.data.photos[count].img_src);
+          setImage(res.data.photos[count]);
         }
         console.log(res.data.photos[count]);
       } else setImage(null);
@@ -108,15 +112,16 @@ const Images = () => {
           </form>
           <Typography
             variant="body2"
-            style={{ marginBottom: "2em", fontSize: ".8em" }}
+            style={{ marginBottom: "2em", marginTop: "1em", fontSize: ".8em" }}
           >
-            Earth Date: {solsToEarthDate(date)}
+            {image && image.camera.full_name} | Earth Date:
+            {solsToEarthDate(date)}
           </Typography>
         </Grid>
         {image ? (
           <img
             onClick={() => setCount(count + 1)}
-            src={image}
+            src={image.img_src}
             alt="rover from mars"
             style={{ height: "60vh" }}
           />

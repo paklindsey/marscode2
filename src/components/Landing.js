@@ -43,7 +43,7 @@ const Landing = () => {
     tl.to(heroText, {
       duration: 2,
       text: "WELCOME TO MARS",
-      ease: Power3,
+      //  ease: Power3,
       //  yoyo: true,
       //  repeat: -1,
     });
@@ -70,7 +70,7 @@ const Landing = () => {
       <Button
         ref={(el) => (enterButton = el)}
         component={Link}
-        to="./marsinfo"
+        to="./marsinfo3"
         classes={{ root: classes.button }}
       >
         ENTER

@@ -49,7 +49,7 @@ const NavBar = () => {
             <Tabs>
               <Tab
                 component={Link}
-                to="/marsinfo"
+                to="/marsinfoembed"
                 label="WEATHER"
                 className={classes.tab}
               />
