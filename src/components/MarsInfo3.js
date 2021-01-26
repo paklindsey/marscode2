@@ -10,16 +10,6 @@ import { gsap, TimelineLite, Power3 } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
-const dummyData = [
-  { sol: "SOL 3001", date: "JAN.14.21", high: "9F", low: "9F" },
-  { sol: "SOL 3002", date: "JAN.15.21", high: "9F", low: "9F" },
-  { sol: "SOL 3003", date: "JAN.16.21", high: "9F", low: "9F" },
-  { sol: "SOL 3004", date: "JAN.17.21", high: "9F", low: "9F" },
-  { sol: "SOL 3005", date: "JAN.18.21", high: "9F", low: "9F" },
-  { sol: "SOL 3006", date: "JAN.19.21", high: "9F", low: "9F" },
-  { sol: "SOL 3007", date: "JAN.20.21", high: "9F", low: "9F" },
-];
-
 const useStyles = makeStyles((theme) => ({
   container: {
     //     backgroundImage: `url(${curiosty})`,
@@ -72,13 +62,13 @@ const MarsInfo3 = () => {
     tl.to(textP2, {
       //  delay: 1,
       duration: 4,
-      text: "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION, ",
+      text: "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION",
       //  ease: Power3.easeInOut,
     });
     tl.to(textP3, {
       //  delay: 1,
       duration: 4,
-      text: "SHE IS STILL IN OPERATION TODAY ",
+      text: "SHE IS STILL IN OPERATION TO THIS DAY",
       //  ease: Power3.easeInOut,
     });
   });
