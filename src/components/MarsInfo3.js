@@ -72,8 +72,13 @@ const MarsInfo3 = () => {
     tl.to(textP2, {
       //  delay: 1,
       duration: 4,
-      text:
-        "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION, SHE IS STILL IN OPERATION TODAY",
+      text: "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION, ",
+      //  ease: Power3.easeInOut,
+    });
+    tl.to(textP3, {
+      //  delay: 1,
+      duration: 4,
+      text: "SHE IS STILL IN OPERATION TODAY ",
       //  ease: Power3.easeInOut,
     });
   });
@@ -104,6 +109,12 @@ const MarsInfo3 = () => {
         ></Typography>
         <Typography
           ref={(el) => (textP2 = el)}
+          variant="body1"
+          className={classes.headerText}
+          style={{ fontSize: ".8em", marginTop: "3em" }}
+        ></Typography>
+        <Typography
+          ref={(el) => (textP3 = el)}
           variant="body1"
           className={classes.headerText}
           style={{ fontSize: ".8em", marginTop: "3em" }}

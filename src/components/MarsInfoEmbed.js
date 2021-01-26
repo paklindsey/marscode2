@@ -24,19 +24,22 @@ const MarsInfoEmbed = () => {
       alignItems="center"
       style={{ marginTop: "-7.5em" }}
     >
+      <Typography style={{ marginTop: "10em" }}>
+        HERE IS SOME WEATHER DATA UPDATED DAILY
+      </Typography>
       <iframe
         src="https://mars.nasa.gov/layout/embed/image/mslweather/"
         title="curiosity"
-        style={{}}
-        width="100%"
-        height="645"
+        style={{ marginTop: "2em" }}
+        width="80%"
+        height="720"
         scrolling="no"
         frameborder="0"
       ></iframe>
       <iframe
         src="https://mars.nasa.gov/layout/embed/image/insightweather/"
         title="elysium"
-        width="100%"
+        width="80%"
         height="720"
         scrolling="no"
         frameborder="0"
