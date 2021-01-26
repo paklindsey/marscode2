@@ -72,13 +72,13 @@ const MarsInfo3 = () => {
     tl.to(textP2, {
       //  delay: 1,
       duration: 4,
-      text: "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION ",
+      text: "NASA DESIGNED CURIOSITY FOR A TWO-YEAR MISSION",
       //  ease: Power3.easeInOut,
     });
     tl.to(textP3, {
       //  delay: 1,
       duration: 4,
-      text: "SHE IS STILL IN OPERATION TODAY ",
+      text: "SHE IS STILL IN OPERATION TO THIS DAY",
       //  ease: Power3.easeInOut,
     });
   });

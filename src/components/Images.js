@@ -32,7 +32,7 @@ const sols = () => {
   let utcLanding = 1344230220000;
   let oneSol = 88775.244;
   let currentSols = (Date.now() - utcLanding) / 1000 / oneSol;
-  return Math.ceil(currentSols);
+  return Math.floor(currentSols);
 };
 
 const solsToEarthDate = (sols) => {

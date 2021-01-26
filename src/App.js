@@ -4,7 +4,6 @@ import theme from "./components/theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Landing from "./components/Landing";
-import MarsInfo from "./components/MarsInfo";
 import MarsInfoEmbed from "./components/MarsInfoEmbed";
 import MarsInfo3 from "./components/MarsInfo3";
 import NavBar from "./components/NavBar";
@@ -19,7 +18,6 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <div>
             <NavBar />
-            <Route exact path="/marsinfo" component={MarsInfo} />
             <Route exact path="/marsinfoembed" component={MarsInfoEmbed} />
             <Route exact path="/marsinfo3" component={MarsInfo3} />
             <Route exact path="/marsphotos" component={Images} />
