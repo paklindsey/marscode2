@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
@@ -10,15 +10,15 @@ import { gsap, TimelineLite, Power3 } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
-const dummyData = [
-  { sol: "SOL 3001", date: "JAN.14.21", high: "9F", low: "9F" },
-  { sol: "SOL 3002", date: "JAN.15.21", high: "9F", low: "9F" },
-  { sol: "SOL 3003", date: "JAN.16.21", high: "9F", low: "9F" },
-  { sol: "SOL 3004", date: "JAN.17.21", high: "9F", low: "9F" },
-  { sol: "SOL 3005", date: "JAN.18.21", high: "9F", low: "9F" },
-  { sol: "SOL 3006", date: "JAN.19.21", high: "9F", low: "9F" },
-  { sol: "SOL 3007", date: "JAN.20.21", high: "9F", low: "9F" },
-];
+// const dummyData = [
+//   { sol: "SOL 3001", date: "JAN.14.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3002", date: "JAN.15.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3003", date: "JAN.16.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3004", date: "JAN.17.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3005", date: "JAN.18.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3006", date: "JAN.19.21", high: "9F", low: "9F" },
+//   { sol: "SOL 3007", date: "JAN.20.21", high: "9F", low: "9F" },
+// ];
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
 
 const MarsInfo3 = () => {
   const classes = useStyles();
-  const theme = useTheme();
   let bgImg = useRef(null);
   let textP1 = useRef(null);
   let textP2 = useRef(null);

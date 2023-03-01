@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
@@ -45,7 +45,6 @@ const solsToEarthDate = (sols) => {
 
 const Images = () => {
   const classes = useStyles();
-  const theme = useTheme();
   const [count, setCount] = useState(0);
   const [image, setImage] = useState("");
   const [date, setDate] = useState(sols() - 2);

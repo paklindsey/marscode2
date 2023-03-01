@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import marsGif from "../assets/marsgif.gif";
 
@@ -46,9 +46,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Landing = (props) => {
   const classes = useStyles();
-  const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   let heroText = useRef(null);
   let enterButton = useRef(null);

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Canvas, extend, useThree } from "react-three-fiber";
@@ -14,7 +13,7 @@ const SpaceShip = () => {
 
   useEffect(() => {
     new GLTFLoader().load("/scene.gltf", setModel);
-  });
+  }, [model]);
 
   return model ? <primitive object={model.scene} /> : null;
 };
@@ -38,34 +37,34 @@ const Controls = () => {
   );
 };
 
-const Plane = () => (
-  <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
-    <planeBufferGeometry attach="geometry" args={[100, 100]} />
-    <meshPhysicalMaterial attach="material" color="white" />
-  </mesh>
-);
+// const Plane = () => (
+//   <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]} receiveShadow>
+//     <planeBufferGeometry attach="geometry" args={[100, 100]} />
+//     <meshPhysicalMaterial attach="material" color="white" />
+//   </mesh>
+// );
 
-const Box = () => {
-  const [hovered, setHovered] = useState(false);
-  const [active, setActive] = useState(false);
-  const props = useSpring({
-    scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-    color: hovered ? "hotpink" : "gray",
-  });
+// const Box = () => {
+//   const [hovered, setHovered] = useState(false);
+//   const [active, setActive] = useState(false);
+//   const props = useSpring({
+//     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
+//     color: hovered ? "hotpink" : "gray",
+//   });
 
-  return (
-    <a.mesh
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      onClick={() => setActive(!active)}
-      scale={props.scale}
-      castShadow
-    >
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <a.meshPhysicalMaterial attach="material" color={props.color} />
-    </a.mesh>
-  );
-};
+//   return (
+//     <a.mesh
+//       onPointerOver={() => setHovered(true)}
+//       onPointerOut={() => setHovered(false)}
+//       onClick={() => setActive(!active)}
+//       scale={props.scale}
+//       castShadow
+//     >
+//       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+//       <a.meshPhysicalMaterial attach="material" color={props.color} />
+//     </a.mesh>
+//   );
+// };
 
 const ThreedMars = () => {
   const isBrowser = typeof window !== "undefined";
