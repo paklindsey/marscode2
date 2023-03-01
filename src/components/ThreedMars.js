@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Canvas, extend, useThree } from "react-three-fiber";
-import { useSpring, a } from "react-spring/three";
+// import { useSpring, a } from "react-spring/three";
 
 import "./style.css";
 
